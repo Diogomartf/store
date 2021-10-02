@@ -1,6 +1,8 @@
-<h1>Products</h1>
-<ul>
+<h1 class="text-3xl mt-4 mb-4 font-bold">Products</h1>
+<ul class="space-y-3">
   <% @products.each do |product| %>
-    <li><%= link_to(product.name, product_path(product), class: '') %></li>
+    <%= link_to(product_path(product), class: 'text-xl bg-gray-100 hover:bg-gray-200 rounded-lg p-4 block') do %>
+      <%= product.name %>
+    <% end %>
   <% end %>
 </ul>
