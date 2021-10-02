@@ -1,0 +1,6 @@
+<%= link_to('back to products', root_path, class: '') %>
+<h1><%= @product.name %></h1>
+<% if @product.description %>
+  <p><%= @product.description %></p>
+<% end %>
+<p>Price: <%= @product.price %></p>
