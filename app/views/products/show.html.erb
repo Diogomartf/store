@@ -3,3 +3,13 @@
 <% if @product.description %>
   <p class="text-gray-600"><%= @product.description %></p>
 <% end %>
+<% if @product.average_rating > 0%>
+  <div class="py-6 flex items-center space-x-5">
+    <p class="text-5xl"><%= number_with_precision(@product.average_rating, precision: 1) %></p>
+    <div class="flex text-4xl space-x-1">
+      <% @product.average_rating.floor.times do %>
+        <span>⭐️</span>
+      <% end %>
+    </div>
+  </div>
+<% end %>

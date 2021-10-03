@@ -1,6 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-zero_to_one_book:
+zero_to_one:
   name: Zero to One
   price: 9.99
   description: Notes on startups, or how to build the future.
+
+how_to_live:
+  name: Zero to One
+  price: 9.99
+  description: 27 conflicting answers and one weird conclusion

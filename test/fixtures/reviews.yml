@@ -1,11 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  product: one
-  comment: MyText
+  product: zero_to_one
+  comment: very good
   rating: 5
 
 two:
-  product: two
-  comment: MyText
-  rating: 2
+  product: zero_to_one
+  comment: Liked it a lot 
+  rating: 4
+
+three:
+  product: zero_to_one
+  comment: not bad
+  rating: 3
