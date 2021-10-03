@@ -13,3 +13,26 @@
     </div>
   </div>
 <% end %>
+<hr>
+<div class="py-6">
+  <div class="flex justify-between items-center">
+    <h2 class="font-bold text-xl">Reviews</h2>
+    <button id="button-add-review" class="shadow  bg-white border border-gray-300 text-gray-400 font-medium px-2 py-1 rounded text-sm hover:bg-gray-50">Add review</button>
+  </div>
+  <div class="my-3">
+    <% @product.reviews.each do |review| %>
+      <div class="grid md:grid-cols-8">
+        <div class="flex text-xl space-x-1 col-span-2">
+          <% review.rating.times do %>
+            <span>⭐️</span>
+          <% end %>
+        </div>
+        <p class="md:col-span-6">
+          <span class="font-bold"><%= review.rating %></span>
+          <span class="text-gray-500">, <%= review.comment %></span>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render "modal" %>

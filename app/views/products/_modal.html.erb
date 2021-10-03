@@ -1,0 +1,14 @@
+<div id="overlay" class="fixed bg-black w-full h-full bg-opacity-50 top-0 left-0 right-0 bottom-0 hidden"  aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="w-full px-6 max-w-2xl z-20 dialog-position">
+    <div class="rounded-lg bg-white p-5">
+      <h1 id="modal-title" class="text-3xl mt-4 font-bold">What's your rating?</h1>
+      <%= form_with(model: @product.reviews.new, url: product_reviews_path(product_id: @product.id), local: true, class: "flex flex-col space-y-7 md:space-y-9") do |f| %>
+        <%= f.label :rating, "Rating", class: "text-2xl mb-4"%>
+        <%= f.number_field :rating, placeholder: "5" %>
+        <%= f.label :comment, "Review", class: "text-2xl mb-4"%>
+        <%= f.text_field :comment, placeholder: "Start typing...", class: "text-lg" %>
+        <%= f.submit "Submit review", class: "shadow bg-white border border-gray-300 text-gray-400 font-medium px-3 py-2 rounded text-sm hover:bg-gray-50" %>
+      <% end %>
+    </div>
+  </div>
+</div>
