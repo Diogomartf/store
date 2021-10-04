@@ -1,8 +1,11 @@
 <h1 class="text-3xl mt-4 mb-4 font-bold">Products</h1>
 <ul class="space-y-3">
   <% @products.each do |product| %>
-    <%= link_to(product_path(product), class: 'text-xl bg-gray-100 hover:bg-gray-200 rounded-lg p-4 block') do %>
-      <%= product.name %>
+    <%= link_to(product_path(product), class: 'text-lg md:text-xl bg-gray-100 hover:bg-gray-200 rounded-lg p-4 flex justify-between space-x-2') do %>
+      <p><%= product.name %></p>
+      <div class="w-20 md:w-24">
+        <%= render "stars", rating: product.average_rating.floor %>
+      </div>
     <% end %>
   <% end %>
 </ul>
