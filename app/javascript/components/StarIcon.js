@@ -1,14 +1,16 @@
 import React from "react";
 
-const StarIcon = ({ props }) => (
+const StarIcon = ({ onClick, classNames, onMouseEnter, onMouseLeave }) => (
   <svg
     width="30"
     height="30"
     viewBox="0 0 30 30"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
-    className="star text-gray-200 cursor-pointer"
-    {...props}
+    className={`cursor-pointer ${classNames}`}
+    onClick={onClick}
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
   >
     <g filter="url(#filter0_i)">
       <path
