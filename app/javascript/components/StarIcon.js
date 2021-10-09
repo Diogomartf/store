@@ -1,58 +1,41 @@
 import React from "react";
 
-const StarIcon = ({ onClick, classNames, onMouseEnter, onMouseLeave }) => (
-  <svg
-    width="30"
-    height="30"
-    viewBox="0 0 30 30"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-    className={`cursor-pointer ${classNames}`}
-    onClick={onClick}
-    onMouseEnter={onMouseEnter}
-    onMouseLeave={onMouseLeave}
-  >
-    <g filter="url(#filter0_i)">
+const StarIcon = ({
+  onClick,
+  color,
+  onMouseEnter,
+  onMouseLeave,
+  onMouseMove,
+  isHalf,
+}) => {
+  return (
+    <svg
+      width="30"
+      height="30"
+      viewBox="0 0 30 30"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`cursor-pointer ${color}`}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onMouseMove={onMouseMove}
+    >
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M29.8947 11.3211C29.6603 10.6474 29.0892 10.1495 28.3862 10.047L20.3164 8.80207L16.7135 1.06914C16.3767 0.439371 15.7323 0 15 0C14.2677 0 13.6233 0.439371 13.2865 1.06914L9.68361 8.80207L1.56989 10.047C0.910833 10.1495 0.339651 10.6474 0.105319 11.3211C-0.129012 11.9802 0.0320908 12.7271 0.54469 13.2251L6.43226 19.2445L5.02628 27.8122C4.92376 28.5152 5.23132 29.2182 5.78785 29.6576C6.1247 29.8919 6.49085 29.9944 6.90093 29.9944C7.19384 29.9944 7.5014 29.9212 7.80896 29.7601L15 25.7764L22.191 29.7601C22.4986 29.9212 22.8062 29.9944 23.0991 29.9944C23.5092 29.9944 23.8753 29.8919 24.2121 29.6576C24.7687 29.2182 25.0762 28.5152 24.9737 27.8122L23.5677 19.2445L29.4553 13.2251C29.9679 12.7271 30.129 11.9802 29.8947 11.3211Z"
+        d="M29.895 11.321c-.235-.674-.806-1.171-1.509-1.274l-8.07-1.245-3.602-7.733C16.377.44 15.732 0 15 0s-1.377.44-1.713 1.07L9.684 8.801 1.57 10.047c-.66.102-1.23.6-1.465 1.274a1.81 1.81 0 00.44 1.904l5.887 6.02-1.406 8.567c-.102.703.205 1.406.762 1.846.337.234.703.336 1.113.336.293 0 .6-.073.908-.234L15 25.776l7.191 3.984c.308.161.615.234.908.234.41 0 .776-.102 1.113-.336.557-.44.864-1.143.762-1.846l-1.406-8.568 5.887-6.019a1.81 1.81 0 00.44-1.904z"
         fill="currentColor"
       />
-    </g>
-    <defs>
-      <filter
-        id="filter0_i"
-        x="0"
-        y="0"
-        width="30"
-        height="29.9944"
-        filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
-        <feFlood floodOpacity="0" result="BackgroundImageFix" />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        />
-        <feColorMatrix
-          in="SourceAlpha"
-          type="matrix"
-          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          result="hardAlpha"
-        />
-        <feOffset dy="-1" />
-        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
-        <feColorMatrix
-          type="matrix"
-          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
-        />
-        <feBlend mode="normal" in2="shape" result="effect1_innerShadow" />
-      </filter>
-    </defs>
-  </svg>
-);
+      <path
+        className={`text-gray-200 ${!isHalf && "hidden"}`} // show if is half star
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M28.3862 10.047C29.0892 10.1495 29.6603 10.6474 29.8947 11.3211C30.129 11.9802 29.9679 12.7271 29.4553 13.2251L23.5677 19.2445L24.9737 27.8122C25.0762 28.5152 24.7687 29.2182 24.2121 29.6576C23.8753 29.8919 23.5092 29.9944 23.0991 29.9944C22.8062 29.9944 22.4986 29.9212 22.191 29.7601L15 25.7764V0C15.7323 0 16.3767 0.439371 16.7135 1.06914L20.3164 8.80207L28.3862 10.047Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
 
 export default StarIcon;
