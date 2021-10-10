@@ -5,8 +5,8 @@
 <% end %>
 <% if @product.average_rating > 0 %>
   <div class="py-6 flex items-center space-x-5">
-    <p class="text-5xl"><%= number_with_precision(@product.average_rating, precision: 1) %></p>
-    <%= render "stars", rating: @product.average_rating.floor %>
+    <p id="product_average_rating" class="text-5xl"><%= number_with_precision(@product.average_rating, precision: 1) %></p>
+    <%= render "products/stars", rating: @product.average_rating.floor %>
   </div>
 <% end %>
 <hr>
@@ -20,7 +20,7 @@
       <% @product.reviews.each do |review| %>
         <div class="md:col-span-2">
           <div class="w-32">
-            <%= render "stars", rating: review.rating %>
+            <%= render "products/stars", rating: review.rating %>
           </div>
         </div>
         <p class="md:col-span-6">
@@ -31,4 +31,4 @@
     </div>
   </div>
 </div>
-<%= render "modal" %>
+<%= render "products/modal" %>
