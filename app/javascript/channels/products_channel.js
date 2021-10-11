@@ -1,10 +1,6 @@
 import consumer from "./consumer";
 
 consumer.subscriptions.create("ProductsChannel", {
-  connected() {
-    console.log("ProductsChannel connected");
-  },
-
   received(data) {
     document.getElementById("reviews").innerHTML += review(
       data.rating,
