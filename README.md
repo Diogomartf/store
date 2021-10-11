@@ -1,24 +1,42 @@
-# README
+# Fun Store
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this store you can add reviews (rating and comment) to products.
 
-Things you may want to cover:
+---
+## Setup
 
-* Ruby version
+Make sure you have ruby and rails, postgres and node installed.
 
-* System dependencies
+**Install the dependencies:**
 
-* Configuration
+Install ruby dependencies (gems)
+```
+bundle install
+```
 
-* Database creation
+Install javascript dependencies
+```
+yarn install
+```
 
-* Database initialization
+## Database
 
-* How to run the test suite
+Run migrations
+```
+rails db:migrate
+```
+Run seeds:
+```
+rails db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Start the application
 
-* Deployment instructions
-
-* ...
+To start the server run
+```
+rails server
+```
+Also run webpack to compile javascript
+```
+./bin/webpack-dev-server
+```
