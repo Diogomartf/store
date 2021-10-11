@@ -13,7 +13,8 @@ gem "puma", "~> 5.0"
 gem "webpacker", "~> 5.0"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem "turbolinks", "~> 5"
-
+# React-Rails is a flexible tool to use React with Rails.
+gem "react-rails"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
 
@@ -39,6 +40,10 @@ group :test do
   gem "selenium-webdriver"
   # Easy installation and use of web drivers to run system tests with browsers
   gem "webdrivers"
+end
+
+group :production do
+  gem "redis", "~> 4.4"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

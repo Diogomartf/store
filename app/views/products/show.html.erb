@@ -5,8 +5,8 @@
 <% end %>
 <% if @product.average_rating > 0 %>
   <div class="py-6 flex items-center space-x-5">
-    <p class="text-5xl"><%= number_with_precision(@product.average_rating, precision: 1) %></p>
-    <%= render "stars", rating: @product.average_rating.floor %>
+    <p id="product_average_rating" class="text-5xl"><%= number_with_precision(@product.average_rating, precision: 1) %></p>
+    <%= render "products/stars", rating: @product.average_rating.floor %>
   </div>
 <% end %>
 <hr>
@@ -16,11 +16,12 @@
     <button id="button-add-review" class="shadow  bg-white border border-gray-300 text-gray-400 font-medium px-2 py-1 rounded text-sm hover:bg-gray-50">Add review</button>
   </div>
   <div class="my-3">
-    <div class="grid gap-5 md:grid-cols-8">
+    <div id="reviews" class="grid gap-5 md:grid-cols-8">
       <% @product.reviews.each do |review| %>
         <div class="md:col-span-2">
           <div class="w-32">
-            <%= render "stars", rating: review.rating %></div>
+            <%= render "products/stars", rating: review.rating %>
+          </div>
         </div>
         <p class="md:col-span-6">
           <span class="font-bold"><%= review.rating %></span>
@@ -30,4 +31,4 @@
     </div>
   </div>
 </div>
-<%= render "modal" %>
+<%= render "products/modal" %>
